@@ -1,0 +1,297 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #111;
+}
+
+.star_wrap{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.star,.star:after,.star:before{
+    content: "";
+    position: absolute;
+    top: -650;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+    radial-gradient(4px 4px at 100px 50px, #fff, transparent),
+    radial-gradient(6px 6px at 200px 150px, #fff, transparent),
+    radial-gradient(3px 3px at 300px 250px, #fff, transparent),
+    radial-gradient(4px 4px at 400px 350px, #fff, transparent),
+    radial-gradient(6px 6px at 500px 10px, #fff, transparent),
+    radial-gradient(3px 3px at 50px 200px, #fff, transparent),
+    radial-gradient(4px 4px at 150px 300px, #fff, transparent),
+    radial-gradient(6px 6px at 250px 400px, #fff, transparent),
+    radial-gradient(3px 3px at 350px 500px, #fff, transparent);
+    background-size: 650px 650px; 
+
+    animation: starAnim 3s linear;
+    animation-iteration-count: infinite;
+}
+
+.star:after{
+    margin-left: -250px;
+    animation-direction: reverse;
+    animation-duration: 6s;
+}
+
+.star:before{
+    margin-left: -350px;
+    animation-direction: reverse;
+    animation-duration: 9s;
+}
+
+@keyframes starAnim{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(650px);
+    }
+}
+
+.gameFont{
+    position: absolute;
+    color:#fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    font-weight: 100;
+}
+
+audio{
+    display: none;
+}
+
+.game-container {
+    position: relative;
+    width: 100vw; 
+    height: 100vh;
+    background-color: black;
+    overflow: hidden; 
+}
+
+.rocket {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.fire {
+    content: '';
+    position: absolute;
+    top:50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    background: linear-gradient(orange,transparent);
+    display: none;
+    animation: growFlame 0.2s ease-in-out forwards;
+}
+
+@keyframes growFlame {
+    from {
+        height: 0;
+    }
+    to {
+        height: 50px;
+    }
+}
+
+.moon {
+    position: absolute;
+    left: 50%;
+    top: 78%;
+    transform: translateX(-50%);
+}
+
+.explosion-container {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px; 
+    display: none;
+}
+
+.explosion {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: orange;
+    border-radius: 50%;
+    animation: explode 1s ease-in-out;
+    opacity: 0;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 0.75;
+    }
+    100% {
+        transform: scale(5);
+        opacity: 0;
+    }
+}
+
+.explosion:nth-child(1) {
+    width: 10px;
+    height: 10px;
+    top: 80px;
+    left: 80px;
+}
+
+.explosion:nth-child(2) {
+    background-color: red;
+    top: 90px;
+    left: 100px;
+}
+
+.explosion:nth-child(3) {
+    width: 10px;
+    height: 10px;
+    top: 100px;
+    left: 90px;
+}
+
+.explosion:nth-child(4) {
+    background-color: red;
+    top: 80px;
+    left: 120px;
+}
+
+.explosion:nth-child(5) {
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    top: 120px;
+    left: 80px;
+}
+
+.explosion:nth-child(6) {
+    top: 120px;
+    left: 120px;
+}
+
+.smoke-container {
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px; 
+    display: none;
+}
+
+.smoke {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    animation: smoke 2s ease-in-out;
+    opacity: 0;
+}
+
+@keyframes smoke {
+    0% {
+        transform: scale(1);
+        opacity: 0.75;
+    }
+    100% {
+        transform: scale(5);
+        opacity: 0;
+    }
+}
+
+.smoke:nth-child(1) {
+    width: 10px;
+    height: 10px;
+    top: 80px;
+    left: 80px;
+}
+
+.smoke:nth-child(2) {
+    top: 90px;
+    left: 100px;
+}
+
+.smoke:nth-child(3) {
+    width: 10px;
+    height: 10px;
+    top: 100px;
+    left: 90px;
+}
+
+.smoke:nth-child(4) {
+    top: 80px;
+    left: 120px;
+}
+
+.smoke:nth-child(5) {
+    width: 10px;
+    height: 10px;
+    top: 120px;
+    left: 80px;
+}
+
+.smoke:nth-child(6) {
+    top: 120px;
+    left: 120px;
+}
+
+.fuel-bar {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 20%;
+    height: 20px;
+    border: 3px solid #fff;
+    border-radius: 20px;
+}
+
+.fuel-level {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    background-color: green;
+    transition: width 0.1s;
+}
+
+.button{
+    position: absolute;
+    transform: translate(-50%,50%);
+    background-color: transparent;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    cursor:pointer;
+    border-width:1px;
+    border-style:solid;
+    border-color:#fff;
+    border-radius: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: scale 0.1s;
+}
+
+.message{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,50%);
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    display: none;
+}

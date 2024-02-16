@@ -1,0 +1,96 @@
+<html>
+
+<head>
+
+    <title>Chandrayaan 3 The Game</title>
+
+    
+    <link rel="stylesheet" href="chandrayaan3.css">
+
+</head>
+
+<body>
+
+    <audio id="thrustSound1"><source src="assets/audio/thrust1.mp3"></audio>
+    <audio id="thrustSound2"><source src="assets/audio/thrust2.mp3"></audio>
+    <audio id="explosionSound"><source src="assets/audio/explosion.mp3"></audio>
+    <audio id="landingSound"><source src="assets/audio/landing.mp3"></audio>
+    <audio id="clickSound"><source src="assets/audio/click.mp3"></audio>
+    <audio id="bgSound"><source src="assets/audio/bgmusic.mp3"></audio>
+    <audio id="countdownSound"><source src="assets/audio/countdown.mp3"></audio>
+
+    <div class="game-container">
+
+        <!--menu button-->
+        <a href="chandrayaan3MainPage.html"><img src="assets/pictures/gameTitle.png" style="position: absolute;top: 30px; left: 50px;height:60px;width:auto;transition: scale 0.1s;" onmouseover="style.scale=1.1" onmouseleave="style.scale=1"></a>
+
+        <!--countdown-->
+        <h id="startMessage" class="gameFont" style="top:50%;left:50%;transform: translate(-50%,-50%);display:none;">Entering Moon's Atmosphere in 
+            <span id="three" class="gameFont" style="display:none">&nbsp3</span>
+            <span id="two" class="gameFont" style="display:none">&nbsp2</span>   
+            <span id="one" class="gameFont" style="display:none">&nbsp1<span>
+        </h>  
+
+        <!--rocket-->
+        <div class="rocket">
+            <img src="assets/pictures/rocket.png" width="40px" height="auto">
+            <div class="fire"></div>
+        </div>
+
+        <!--moon-->
+        <div class="moon">
+        <img src="assets/pictures/moon.png" width="400px" height="auto">
+        </div>
+
+        <!--explosion-->
+        <div class="explosion-container">
+            <div class="explosion"></div>
+            <div class="explosion"></div>
+            <div class="explosion"></div>
+            <div class="explosion"></div>
+            <div class="explosion"></div>
+            <div class="explosion"></div>
+        </div>
+
+        <!--smoke-->
+        <div class="smoke-container">
+            <div class="smoke"></div>
+            <div class="smoke"></div>
+            <div class="smoke"></div>
+            <div class="smoke"></div>
+            <div class="smoke"></div>
+            <div class="smoke"></div>
+        </div>
+
+        <!--fuel bar-->
+        <div class="fuel-bar">
+            <h3 class="gameFont" style="top: -100%; left: -20%; font-size: 20px;">Fuel:</h3>
+            <h3 class="gameFont" style="top: 50%; right: 0; font-size: 20px"><span id="fuelPercentage"></span>%</h3>
+            <div class="fuel-level"></div>
+        </div>
+
+        <!--start button-->
+        <button id="start" class="button" style="top: 50%; left: 50%;">Start</button>
+       
+        <!--how to play-->
+        <p id="controls" class="message" style="top: 55%; left: 50%;display:block;font-size: 24px;">Hold 'Spacebar' to thrust</p>
+
+        <!--game loss message-->
+        <div id="gameLossScreen" class="message">
+            <h1>You crashed Chandrayaan 3!</h1>
+            <button id="tryagain" class="button" style="top: 80%; left: 50%;">Try Again?</button>
+        </div>"
+
+        <!--game win message-->
+        <div id="gameWinScreen" class="message">
+            <h1>You landed Chandrayaan 3!</h1>
+            <button id="playagain" class="button" style="top: 80%; left: 50%;">Play Again?</button>
+        </div>
+
+    </div>
+    
+    <script src="chandrayaan3.js"></script>
+
+</body>
+
+</html>
